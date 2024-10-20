@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #f3f4f6;
+  color: #002e3c;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #013440;
+  padding: 26px 40px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+  height: 40px;
+}
+
+.header nav a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.header nav a:last-child {
+  margin-right: 0;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #013440;
+}
+/*
+.section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+} */
+
+/* Extra small devices (phones, 600px and down) */
+.section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-direction: column;
+  row-gap: 30px;
+}
+.section-item {
+  flex: 1;
+  filter: blur(4px);
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-right: 0px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.circle-chart {
+  height: 180px;
+  width: 180px;
+  background: conic-gradient(
+    #00574b 0% 44%,
+    #ffcc00 44% 56%,
+    #c9d1d3 56% 60%,
+    #6b7f85 60% 90%,
+    #c9d1d3 90% 100%
+  );
+  border-radius: 50%;
+  margin: 20px auto;
+}
+
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .section-item {
+    flex: 1;
+    filter: blur(4px);
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-right: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  .section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-direction: row;
+  }
+
+  .circle-chart {
+    height: 280px;
+    width: 280px;
+    background: conic-gradient(
+      #00574b 0% 44%,
+      #ffcc00 44% 56%,
+      #c9d1d3 56% 60%,
+      #6b7f85 60% 90%,
+      #c9d1d3 90% 100%
+    );
+    border-radius: 50%;
+    margin: 20px auto;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
+
+.section-item:last-child {
+  margin-right: 0;
+}
+
+.section-item h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #013440;
+}
+
+.section-item p {
+  font-size: 14px;
+  color: #666;
+}
+
+.section-item button {
+  background-color: #ffcc00;
+  color: #013440;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.layout-button {
+  background-color: #ffcc00;
+  color: #013440;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.overview {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.overview-item {
+  flex: 1;
+  padding: 20px;
+  filter: blur(4px);
+  z-index: -100;
+  margin-right: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.overview-item h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #013440;
+}
+
+.overview-item:last-child {
+  margin-right: 0;
+}
+
+.account-list {
+  list-style: none;
+  padding: 0;
+}
+
+.account-list li {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.account-list li span {
+  display: block;
+  font-size: 14px;
+  color: #666;
+}
+
+.transactions {
+  margin-top: 30px;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.transaction-item p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.transaction-item small {
+  color: #666;
+}
+
+.top-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 12px;
+  color: #ffffff;
+  background-color: #ffcc00;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #777;
+}

@@ -1,0 +1,1 @@
+export type NotificationMethod = 'sms' | 'mail' | 'push';
