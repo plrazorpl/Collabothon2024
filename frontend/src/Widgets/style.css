@@ -1,0 +1,36 @@
+.Header {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px;
+  width: calc(100% - 40px);
+  border-bottom: 1px solid black;
+}
+
+.HeaderIcon {
+  margin-right: 4%;
+}
+
+.HeaderTitle {
+  margin-left: 4%;
+}
+
+.WidgetCloseButton {
+  position: relative;
+  width: 0;
+  height: 0;
+  overflow: visible;
+  top: 4px;
+  right: calc(-100% + 28px);
+}
+
+.WidgetCloseButtonIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: background 0.5s;
+}
+
+.WidgetCloseButtonIcon:hover {
+  background-color: #7c0000;
+  cursor: pointer;
+}

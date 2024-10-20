@@ -1,0 +1,108 @@
+.App {
+  color: black;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.NavBar {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between elements */
+  align-items: center; /* Center items vertically */
+  background-color: #002E3C;
+  padding: 20px;
+  width: calc(100% - 40px);
+}
+
+.LoginLock img{
+  width: 20px;
+  height: 20px;
+}
+
+.LoginLock {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Center items vertically */
+  color: white; /* Set text color to white */
+}
+
+.LoginText {
+  margin-left: 5px; /* Add some space between the icon and the text */
+  color: white; /* Ensure the text color is white */
+  font-size: 12px;
+}
+
+.Main {
+  height: 100%;
+  background-color: #D9D9D9;
+  width: calc(100% - 40px);
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  height: calc(100% - 40px);
+}
+
+.WidgetsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Set maximum of 3 columns */
+  gap: 5%; /* Space between widgets */
+  padding: 10px; /* Optional padding around the grid */
+  justify-items: stretch; /* Ensure items stretch to fill the cells */
+}
+
+.DummyWidget {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #003A3C;
+  border-radius: 16px;
+  -webkit-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 1);
+  -moz-box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 1);
+  box-shadow: 12px 12px 0px 0px rgba(30, 30, 30, 1);
+}
+
+.SideBar {
+  margin: 0 20px;
+  height: 100%;
+  border-radius: 56px;
+  background: #002E3C;
+  width: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.VisibilityToggle {
+  border-radius: 50%;
+  width: 62px;
+  height: 62px;
+  background: #608081;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.5s;
+  margin: 1px;
+}
+
+.VisibilityToggle:hover {
+  background: #608081;
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  user-select: none; /* Disable text selection */
+  position: absolute;
+}
