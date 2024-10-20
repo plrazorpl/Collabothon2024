@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ApiClient } from "../api-client";
+import { ApiClient, ISearchResult } from "../api-client";
 
 interface Props {
   active: boolean;
@@ -9,9 +9,12 @@ interface Props {
 };
 
 interface IAiMessage {
-  text: string;
+  text: string | null;
   isUser: boolean;
+  url?: string;
 }
+
+const api = new ApiClient();
 
 function mergeBuffers(channelBuffer: Float32Array[], recordingLength: number): Float32Array {
    const result = new Float32Array(recordingLength);
@@ -45,7 +48,6 @@ async function processAudio(buffers: Float32Array[], totalSampleCount: number, s
   const u16 = toPCM16(f32);
   const pcmBytes = new Uint8Array(u16.buffer, u16.byteOffset, u16.byteLength);
 
-  const api = new ApiClient();
   const transactionId = await api.requestTranscription(pcmBytes, sampleRate, 1, 16);
   const result = await api.awaitTranscription(transactionId);
   transcribed(result);
@@ -111,20 +113,44 @@ async function recordAudio(transcribed: (text: string) => void, recordCallback: 
   recorder.connect(audioContext.destination);
 }
 
+async function search(query: string): Promise<ISearchResult> {
+  const results = await api.search(query);
+  return results;
+}
+
 export default function AiChatPanel({ active, onDismiss } : Props) {
   const [ messages, setMessages ] = useState<IAiMessage[]>([]);
   const [ recording, setRecording ] = useState(false);
   const [ userInput, setUserInput ] = useState("");
   const [ isProcessing, setIsProcessing ] = useState(false);
-  const addUserMessage = (text: string) => {
+  const [ isThinking, setIsThinking ] = useState(false);
+  const addUserMessage = (text: string | null) => {
     console.log("received user message:", text);
     setIsProcessing(false);
-    setMessages([ ...messages, { isUser: true, text } ]);
+    setMessages((prev) => [ ...prev, { isUser: true, text } ])
+
+    if (text === null)
+      return;
+
+    setIsThinking(true);
+    search(text).then(x => {
+      if (x.files.length < 1) {
+        addSystemMessage(null);
+        return;
+      }
+
+      const file = x.files[0];
+      if (!!file.snippet || !!file.url) {
+        // TODO: tts
+        addSystemMessage(file.snippet, file.url);
+      }
+    });
   };
-  // const addSystemMessage = (text: string) => {
-  //   console.log("received system message:", text);
-  //   setMessages([ ...messages, { isUser: false, text } ]);
-  // };
+  const addSystemMessage = (text: string | null, url?: string) => {
+    console.log("received system message:", text);
+    setIsThinking(false);
+    setMessages((prev) => [ ...prev, { isUser: false, text, url } ])
+  };
 
   return (
     <div style={{
@@ -204,7 +230,11 @@ export default function AiChatPanel({ active, onDismiss } : Props) {
             padding: '6px 18px',
             fontSize: '13pt',
             lineHeight: '36px',
-          }}>{ x.text !== null ? x.text : <i>{ "Sorry, didn't quite catch that" }</i> }</div></div>) }
+          }}>
+            { x.text !== null ? x.text : <i>{ x.isUser ? "Sorry, didn't quite catch that" : "Sorry, didn't find anything" }</i> }
+            { x.url !== null && x.url !== undefined ? <><hr style={{ borderTop: "1px solid #999" }} /><a href={x.url} target="_blank">📄 See document</a></> : <></> }
+          </div></div>) 
+          }
           {
             isProcessing ? <div style={{ display: "contents" }}><div style={{
               boxSizing: "border-box",
@@ -214,14 +244,32 @@ export default function AiChatPanel({ active, onDismiss } : Props) {
               textAlign: "center",
               borderRadius: "24px",
               background: "#eee",
-            }}>👤</div><div style={{
+            }}>✨</div><div style={{
               border: "1px solid #ddd",
               background: "transparent",
               borderRadius: '8px',
               padding: '6px 18px',
               fontSize: '13pt',
               lineHeight: '36px',
-            }}><i>Processing...</i></div></div> : <></>
+            }}><i>processing...</i></div></div> : <></>
+          }
+          {
+            isThinking ? <div style={{ display: "contents" }}><div style={{
+              boxSizing: "border-box",
+              width: "48px",
+              height: "48px",
+              lineHeight: "48px",
+              textAlign: "center",
+              borderRadius: "24px",
+              background: "#eee",
+            }}>✨</div><div style={{
+              border: "1px solid #ddd",
+              background: "#ddd",
+              borderRadius: '8px',
+              padding: '6px 18px',
+              fontSize: '13pt',
+              lineHeight: '36px',
+            }}><i>Thinking...</i></div></div> : <></>
           }
         </div>
 

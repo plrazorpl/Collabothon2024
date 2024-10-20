@@ -1,11 +1,26 @@
-from pathlib import Path
-from pprint import pprint
-from tkinter import W
-from google.cloud import discoveryengine_v1beta as discoveryengine_v1
-from google.cloud import storage
-from urllib.parse import urlparse
+from google.cloud import discoveryengine_v1
+from html import unescape
+from html.parser import HTMLParser
+from io import StringIO
 import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "lodzkiterror-65599eb0142d.json"
+
+class MLStripper(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.reset()
+        self.strict = False
+        self.convert_charrefs= True
+        self.text = StringIO()
+    def handle_data(self, d):
+        self.text.write(d)
+    def get_data(self):
+        return self.text.getvalue()
+
+def strip_tags(html):
+    s = MLStripper()
+    s.feed(html)
+    return s.get_data()
 
 # Replace these placeholders with your actual values
 project_id = "lodzkiterror"
