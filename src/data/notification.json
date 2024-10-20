@@ -1,0 +1,145 @@
+[
+  {
+    "title": "Loan Payment Due Soon: #LPD-10-2024-001",
+    "description": "Your loan payment for account #LPD-10-2024-001 is due by 31.10.2024. Please ensure funds are available for the scheduled payment.",
+    "type": "Financial",
+    "frequency": "Notification 7 days before the due date",
+    "id": 1,
+    "datetime": "2024-10-20T12:00:00",
+    "category": "automatic",
+    "read": false,
+    "archived": false,
+    "due": 1
+  },
+  {
+    "title": "Approval Needed for High-Value Transaction",
+    "description": "A transaction of €500,000 requires your approval. Please review and approve within 24 hours.",
+    "type": "Transaction Approval",
+    "frequency": "One-time notification upon detection of large transaction",
+    "id": 2,
+    "datetime": "2024-10-22T12:00:00",
+    "category": "automatic",
+    "read": false,
+    "person": [
+      {
+        "fullname": "Andrew Kapiszon",
+        "approval": true
+      },
+      {
+        "fullname": "Konrad Kredka",
+        "approval": false
+      }
+    ],
+    "url": "/collabothon/document/1",
+    "archived": false,
+    "due": 2
+  },
+  {
+    "title": "Currency Exchange Rate Threshold Reached",
+    "description": "The EUR/USD exchange rate has dropped below your set threshold of 1.10. Please review your hedging strategy.",
+    "type": "Market Alert",
+    "frequency": "Real-time alert when the threshold is met",
+    "id": 3,
+    "datetime": "2024-10-24T12:00:00",
+    "category": "external",
+    "read": true,
+    "archived": false,
+    "due": 3,
+    "url": "/collabothon/document/1"
+  },
+  {
+    "title": "Potential Fraudulent Activity Detected: #FAD-10-2024-XYZ",
+    "description": "Suspicious activity has been identified on account #FAD-10-2024-XYZ. Please verify recent transactions.",
+    "type": "Security",
+    "frequency": "Immediate notification when fraud detection flags suspicious activity",
+    "id": 4,
+    "datetime": "2024-10-26T12:00:00",
+    "category": "external",
+    "read": false,
+    "archived": false,
+    "due": 4
+  },
+  {
+    "title": "Upcoming Quarterly Financial Report Due",
+    "description": "Your Q3 financial report is due by 10.11.2024. Please submit the necessary documents via the client portal.",
+    "type": "Compliance",
+    "frequency": "Reminder 14 days before the submission deadline",
+    "id": 5,
+    "datetime": "2024-10-28T12:00:00",
+    "category": "external",
+    "read": false,
+    "archived": false,
+    "due": 5
+  },
+  {
+    "title": "Credit Line Utilization Alert: #ACA-10-2024-XYZ",
+    "description": "You have utilized 85% of your credit line on account #ACA-10-2024-XYZ. Please review your available credit.",
+    "type": "Financial",
+    "frequency": "One-time notification when credit line usage exceeds 80%",
+    "id": 6,
+    "datetime": "2024-10-30T12:00:00",
+    "category": "conditional",
+    "read": false,
+    "archived": false,
+    "due": 6
+  },
+  {
+    "title": "Payment Approval Deadline Approaching",
+    "description": "A payment of €200,000 requires approval by 17:00 today to avoid delays. Please approve the transaction in the system.",
+    "type": "Urgent",
+    "frequency": "One-time alert a few hours before the deadline",
+    "id": 7,
+    "datetime": "2024-11-01T12:00:00",
+    "category": "conditional",
+    "read": false,
+    "person": [
+      {
+        "fullname": "Christofer Thepooh",
+        "approval": true
+      },
+      {
+        "fullname": "Sam Pajac",
+        "approval": false
+      }
+    ],
+    "url": "/collabothon/document/1",
+    "archived": false,
+    "due": 7
+  },
+  {
+    "title": "New Regulatory Requirements",
+    "description": "Recent regulatory changes may impact your investment strategy. Please review the latest compliance guidelines.",
+    "type": "Regulatory",
+    "frequency": "One-time notification after regulatory updates",
+    "id": 8,
+    "datetime": "2024-11-03T12:00:00",
+    "category": "automatic",
+    "read": false,
+    "archived": true,
+    "due": 8
+  },
+  {
+    "title": "Low Liquidity Warning: #TR-11-2024-001",
+    "description": "Liquidity on treasury account #TR-11-2024-001 has fallen below the set threshold of €100,000. Please transfer funds to maintain required balances.",
+    "type": "Financial",
+    "frequency": "Real-time alert when liquidity falls below the threshold",
+    "id": 9,
+    "datetime": "2024-11-05T12:00:00",
+    "category": "conditional",
+    "read": false,
+    "archived": true,
+    "due": 9
+  },
+  {
+    "title": "KYC Update Required",
+    "description": "Your annual KYC information needs to be updated by 01.12.2024. Please provide the necessary documentation to remain compliant.",
+    "type": "Compliance",
+    "frequency": "Reminder 30 days before the KYC update deadline",
+    "id": 10,
+    "datetime": "2024-11-07T12:00:00",
+    "category": "automatic",
+    "read": false,
+    "archived": true,
+    "due": 10
+  }
+]

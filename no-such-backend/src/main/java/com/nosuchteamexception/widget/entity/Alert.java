@@ -1,0 +1,4 @@
+package com.nosuchteamexception.widget.entity;
+
+public class Alert {
+}
