@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    @apply bg-gray-200;
+    /* background-color: 00534e; */
+}
+
+.commerzbank-color {
+    color: #fbb809;
+}
+
+.comarzbank-bg {
+    background-color: #fbb809;
+}
+
+.commerzbank-border {
+    border-color: #fbb809;
+    border-width: 2px;
+}
+
+.commerzbank-shadow {
+    box-shadow: 0 4px 6px -1px rgba(251, 184, 9, 0.1), 0 2px 4px -1px rgba(251, 184, 9, 0.06);
+}
+
+/* Override FullCalendar styles */
+:root {
+    --fc-small-font-size: 0.85em;
+    --fc-page-bg-color: #ffffff;
+    --fc-neutral-bg-color: rgba(232, 232, 232, 0.3);
+    --fc-neutral-text-color: #666666;
+    --fc-border-color: #e6e6e6;
+
+    --fc-button-text-color: #ffffff;
+    --fc-button-bg-color: #002d64; /* Dark Commerzbank blue */
+    --fc-button-border-color: #002d64;
+    --fc-button-hover-bg-color: #001a3c;
+    --fc-button-hover-border-color: #001533;
+    --fc-button-active-bg-color: #001533;
+    --fc-button-active-border-color: #001027;
+
+    --fc-event-bg-color: #002d64; /* Commerzbank gold for events */
+
+    --fc-event-border-color: #002d64; /* Matching gold for borders */
+    --fc-event-text-color: #002d64;
+    --fc-event-selected-overlay-color: rgba(0, 45, 100, 0.25);
+
+    --fc-more-link-bg-color: #f3f3f3;
+    --fc-more-link-text-color: #002d64;
+
+    --fc-event-resizer-thickness: 8px;
+    --fc-event-resizer-dot-total-width: 8px;
+    --fc-event-resizer-dot-border-width: 1px;
+
+    --fc-non-business-color: rgba(232, 232, 232, 0.3);
+    --fc-bg-event-color: rgb(179, 201, 229);
+    --fc-bg-event-opacity: 0.2;
+    --fc-highlight-color: rgba(0, 45, 100, 0.15);
+    --fc-today-bg-color: rgba(255, 204, 0, 0.15);
+    --fc-now-indicator-color: #ff0000;
+    --fc-event-text-color: #ffffff;
+}
+
+.fc {
+    color: var(--fc-page-text-color);
+}

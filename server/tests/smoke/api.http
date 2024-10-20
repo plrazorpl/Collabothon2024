@@ -1,0 +1,48 @@
+## Get calendar actions
+
+GET /api/v1/calendar-actions
+Host: localhost:8000
+Authorization: Bearer 2rqkCplZPDNNibrXTAyA576IeOLu18ASBiuer0oqmXuCruwJ5WAaF2KvAa9pCRh2
+
+### Decline calendar event
+
+POST /api/v1/calendar-event-decline/5d565b35-caae-4e4e-bdb3-2ae9aa01ccd5
+Host: localhost:8000
+Authorization: Bearer 2rqkCplZPDNNibrXTAyA576IeOLu18ASBiuer0oqmXuCruwJ5WAaF2KvAa9pCRh2
+
+### Event with new proposed range of dates
+
+POST /api/v1/calendar-event-duplicate/5d565b35-caae-4e4e-bdb3-2ae9aa01ccd5
+Host: localhost:8000
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2rqkCplZPDNNibrXTAyA576IeOLu18ASBiuer0oqmXuCruwJ5WAaF2KvAa9pCRh2
+
+{
+  "start_date": "2028-05-11 11:00",
+  "end_date": "2028-06-11 11:00"
+}
+
+### Approve calendar event
+
+POST /api/v1/calendar-event-accept/afb33cf8-e2d2-43a2-9c60-0e7895cd976a
+Host: localhost:8000
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2rqkCplZPDNNibrXTAyA576IeOLu18ASBiuer0oqmXuCruwJ5WAaF2KvAa9pCRh2
+
+## #5d565b35-caae-4e4e-bdb3-2ae9aa01ccd5X
+
+### Create calendar event
+
+POST /api/v1/calendar-event-create/3765de9b-8d8a-47dc-a17b-e2d8f8c3f059
+Host: localhost:8000
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2rqkCplZPDNNibrXTAyA576IeOLu18ASBiuer0oqmXuCruwJ5WAaF2KvAa9pCRh2
+
+{
+  "start_date": "2028-05-11 11:00",
+  "end_date": "2028-06-11 11:00",
+  "location": "Angora"
+}
