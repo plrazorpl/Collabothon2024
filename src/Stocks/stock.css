@@ -1,0 +1,137 @@
+/* Основные стили для контейнера */
+body{
+    background-color: #0f3b47;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: #0f3b47;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили заголовков */
+h1, h2 {
+    color: #0f3b47;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+/* Список доступных акций */
+.stock-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.stock-list li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Кнопки для добавления в избранное */
+button {
+    background-color: #ffcc00;
+    color: #0f3b47;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e6b800;
+}
+
+/* Стиль для блока с избранными акциями */
+.stock-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Стили для отображения деталей акции */
+.stock-details {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #eef6f8;
+    border-radius: 8px;
+}
+
+.stock-details p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* Стили для поля выбора даты */
+.date-selector {
+    margin: 20px 0;
+}
+
+.date-selector input[type="date"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Стили для сообщения об ошибке */
+.error {
+    color: red;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .stock-details p {
+        font-size: 16px;
+    }
+}

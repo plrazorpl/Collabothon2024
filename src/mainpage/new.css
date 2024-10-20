@@ -1,0 +1,79 @@
+/* General body styling */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0f3b47; /* Dark teal background */
+    font-family: 'Arial', sans-serif;
+    color: white;
+    background-color: #0f3b47;
+}
+
+/* Container to center the content */
+.container {
+    display: flex;
+    max-width: 1600px; /* Increased max-width for the container */
+    margin: 0 auto;
+}
+
+/* Left panel styling */
+.left-panel {
+    flex: 1;
+    padding-right: 20px;
+}
+
+/* Right panel styling */
+.right-panel {
+    flex: 3;
+}
+
+/* Grid layout for stocks */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Dynamic columns */
+    gap: 16px; /* Space between grid items */
+    margin-bottom: 40px;
+}
+
+/* Stock item styling */
+.stock-item {
+    padding: 16px;
+    background-color: white;
+    color: #0f3b47;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Subtitle styling */
+h2 {
+    font-size: 26px;
+    margin-bottom: 40px;
+}
+
+/* Button styling */
+button {
+    background-color: #f5c319; /* Yellow button */
+    color: #0f3b47; /* Dark teal text */
+    border: none;
+    border-radius: 25px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for button */
+button:hover {
+    background-color: #e0ab00; /* Darker yellow on hover */
+}
