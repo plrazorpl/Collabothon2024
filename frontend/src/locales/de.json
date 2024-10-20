@@ -1,0 +1,18 @@
+{
+  "welcome": "Willkommen",
+  "accountBalance": "Kontostand",
+  "totalBalance": "Gesamtbetrag",
+  "currencyPredictedTitle": "Währung Vorhergesagter Wert im Laufe der Zeit",
+  "transactions": "Transaktionen",
+  "cashTransactions": "Bargeldtransaktionen",
+  "onlineTransactions": "Online-Transaktionen",
+  "carbonFootprint": "CO2-Fußabdruck",
+  "carbonFootprintTooltip": "Gesparter CO2-Fußabdruck",
+  "tooltipContent": "Der CO2-Fußabdruck ist die Gesamtmenge an Treibhausgasen, die durch unsere Handlungen erzeugt werden.",
+  "timeSpent": "Verbrachte Zeit",
+  "ourClients": "Gleicher oder höherer Zeitaufwand für andere Kunden: ",
+  "averageClientsTime": "Ihre durchschnittliche Zeit: ",
+  "yourAverageTime": "Dauer des letzten Kundenbesuchs",
+  "trend": "Besuchstrend",
+  "darkTheme": "Dunkles Thema"
+}

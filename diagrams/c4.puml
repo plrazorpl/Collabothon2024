@@ -1,0 +1,45 @@
+@startuml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+!define DEVICONS2 https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons2
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include DEVICONS2/spring.puml
+!include DEVICONS2/flask_original.puml
+!include DEVICONS2/python.puml
+!include DEVICONS2/graphql.puml
+!include ./react.puml
+!include DEVICONS2/mysql.puml
+
+left to right direction
+
+' Frontend container - Frontend app
+Container_Boundary(c1, "Frontend [React]") {
+    Component(feLayer, "React", "axios", "Frontend", $sprite="react_original")
+}
+
+' Backend container - Spring Boot
+Container_Boundary(c2, "Backend") {
+    Component(be,"Backend", "spring", "Java & Spring Boot", $sprite="spring")
+}
+
+' Data Analysis container - Flask & Python
+Container_Boundary(c3, "Data Analysis") {
+    Component(aibecommunication, "Data Analysis and Communication", "flask", "Flask API", $sprite="flask_original")
+}
+
+' Database container - MySQL
+Container_Boundary(c4, Database) {
+    Component_Ext(db,"MySQL", "MySQL", "Database", $sprite="mysql")
+}
+
+Container_Boundary(c5, "Currency Exchange Api") {
+    Component_Ext(CuApi,"Currency Exchange Api", "", "")
+}
+
+' Relationships
+Rel(feLayer, be, "REST API")
+Rel(be, aibecommunication, "REST API")
+Rel(be, CuApi, "REST API")
+Rel_D(be, db, "SQL")
+@enduml

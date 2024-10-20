@@ -1,0 +1,20 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+
+  application:
+    name: widget-service
+
+  datasource:
+    username: ${MYSQL_USER:#{user}}
+    password: ${MYSQL_PASSWORD:#{password}}
+    url: ${MYSQL_URL}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        show_sql: true

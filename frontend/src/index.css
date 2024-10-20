@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.glossy-background {
+  position: relative; /* Position relative for the pseudo-element */
+  overflow: hidden; /* Prevent overflow from pseudo-element */
+  background: linear-gradient(135deg, #1d5b6e, #002E3C); /* Your background color */
+  border-radius: 12px; /* Match your rounded corners */
+}
+
+.glossy-background::before {
+  content: '';
+  position: absolute;
+  top: -20%; /* Adjust for desired shine position */
+  left: -20%; /* Adjust for desired shine position */
+  width: 140%; /* Extend the shine beyond the div */
+  height: 140%; /* Extend the shine beyond the div */
+  background: rgba(255, 255, 255, 0.3); /* White semi-transparent layer */
+  border-radius: 12px; /* Match your rounded corners */
+  transform: rotate(-30deg); /* Angle the shine */
+  z-index: 1; /* Place shine above background */
+  pointer-events: none; /* Prevent interaction */
+}
+
+.glossy-background .content {
+  position: relative; /* Position relative for content */
+  z-index: 2; /* Place content above the shine */
+}
+
+.card-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-animation {
+  transition: transform 0.3s ease;
+}
+
+.card-animation:hover {
+  transform: translateY(-5px);
+}
+
+.light {
+  --bgColor: #F2F2F2;
+  --textColor: #002E3C;
+  --yellowBank: #ffd700;
+  --borderColor: #002E3C;
+}
+.dark {
+  --bgColor: #262626;
+  --bgColor2: #002E3C;
+  --textColor: #F4F4F6;
+  --textColor2: #A2AEBB;
+  --borderColor: #F4F4F6;
+  --yellowBank: #ffd700;
+}
