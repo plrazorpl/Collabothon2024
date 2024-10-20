@@ -1,0 +1,55 @@
+// src/widgets/Kittens/Kittens.scss
+
+@import "@styles/variables.scss";
+
+.kittens-widget {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background-color: $bg-primary;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .kittens-swiper {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+
+    .kittens-swiper__slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .kittens-swiper__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+  }
+
+  // Анимация fadeIn
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &.fadeIn {
+    animation: fadeIn 0.5s ease-out;
+  }
+}

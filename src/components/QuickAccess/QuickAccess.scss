@@ -1,0 +1,44 @@
+@import "@styles/_variables.scss";
+
+.quickAccess {
+  grid-column: 2 / span 1; // Start at column 2
+  grid-row: 1 / span 1; // Start at row 1
+
+  display: flex;
+  flex-wrap: wrap; /* Added this line to allow wrapping */
+  background-color: $bg-primary;
+  border-radius: 8px;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 12px;
+  line-break: normal;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s;
+  width: 80px;
+  height: 100px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &__icon {
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+    padding: 8px;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 8px;
+
+    & svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

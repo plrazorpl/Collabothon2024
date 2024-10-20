@@ -1,0 +1,113 @@
+@import "@styles/_variables.scss";
+
+// Variables for colors
+$positive-color: #34c759;
+$negative-color: #ff3b30;
+$font-color: #555;
+
+.balanceDashboard {
+  background-color: $bg-primary;
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; // Скрываем скроллбар
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__select {
+      font-size: 14px;
+      border: none;
+      background: transparent;
+      outline: none;
+      cursor: pointer;
+      color: $font-color;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+
+      &:focus {
+        border-bottom: 1px solid $primary-color;
+      }
+    }
+
+    &__select::after {
+      content: '';
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 6px;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23555' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      pointer-events: none;
+    }
+
+    &__periodSwitch {
+      display: flex;
+
+      &__button {
+        background: none;
+        border: 1px solid transparent;
+        font-size: 14px;
+        margin-left: 5px;
+        color: #888;
+        cursor: pointer;
+        transition: color 0.2s, border-color 0.2s;
+        padding: 5px 10px;
+        border-radius: 4px;
+
+        &:hover {
+          border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        &--active {
+          color: $positive-color;
+          font-weight: bold;
+          border-color: $positive-color;
+        }
+      }
+    }
+  }
+
+  &__chart {
+    flex: 1 1 auto;
+    padding: 10px 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    &__section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+
+      &__label {
+        font-size: 14px;
+        color: $font-color;
+      }
+
+      &__value {
+        font-size: 16px;
+        font-weight: bold;
+
+        &--positive {
+          color: $positive-color;
+        }
+
+        &--negative {
+          color: $negative-color;
+        }
+      }
+    }
+  }
+}

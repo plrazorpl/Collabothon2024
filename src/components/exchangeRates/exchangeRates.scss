@@ -1,0 +1,71 @@
+@import "@styles/_variables.scss";
+
+$positive-color: #34c759;
+$negative-color: #ff3b30;
+$font-color: #555;
+
+.exchangeRates-widget {
+  background-color: $bg-primary;
+  border-radius: 16px;
+  padding: 16px;
+  width: 100%; // Убираем фиксированную ширину
+  height: 100%; // Убираем фиксированную высоту
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; // Скрываем скроллбар
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    background: transparent;
+
+    .exchangeRates__select {
+      font-size: 14px;
+      padding: 3px 35px 3px 3px; // Увеличенный padding-right для стрелки
+      border: none;
+      background: transparent;
+      outline: none;
+      cursor: pointer;
+      color: $font-color;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      border-bottom: 1px solid #ddd;
+      position: relative; // Для псевдоэлемента
+
+      &:focus {
+        border-bottom: 1px solid $primary-color;
+      }
+    }
+
+    .exchangeRates__select::after {
+      content: '';
+      position: absolute;
+      right: 10px; // Увеличенный отступ от правого края
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #555; // Цвет стрелки
+      pointer-events: none;
+    }
+
+    &__separator {
+      margin: 0 5px;
+      color: $font-color;
+    }
+
+    &__rate {
+      font-size: 16px;
+      color: #555;
+    }
+  }
+
+  &__chart {
+    flex: 1 1 auto;
+  }
+}

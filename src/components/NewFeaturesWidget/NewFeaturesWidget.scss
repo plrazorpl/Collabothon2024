@@ -1,0 +1,61 @@
+@import "@styles/variables.scss";
+
+.newFeatures {
+  // grid-column: 2 / span 1; // Start at column 2
+  // grid-row: 2 / span 1; // Start at row 2
+  // /* Existing styles */
+
+  display: flex;
+  border: 1px solid #e5e7eb;
+  padding: 22px;
+  border-radius: 8px;
+  background-color: $bg-primary;
+  margin: 0 auto;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .fadeIn {
+    animation: fadeIn 1s ease-in;
+  }
+
+  &__leftContent {
+    flex-direction: column;
+    flex: 2;
+    display: flex;
+
+    justify-content: bottom;
+  }
+
+  &__icon {
+    width: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__rightContent {
+    justify-content: center;
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+    flex: 3;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  &__description {
+    color: #374151;
+  }
+}
