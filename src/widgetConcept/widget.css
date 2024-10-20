@@ -1,0 +1,40 @@
+
+.widget-root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+    .yellow-rectangle {
+        width: 1200px; /* Set width to 300px */
+        height: 400px; /* Set height to 300px */
+        background-color: rgb(0, 46, 60); /* Set background color to yellow */
+        border-radius: 40px; /* Optionally, add rounded corners */
+    }
+
+    .bottina-background {
+        width: 340px; /* Set width to 300px */
+        height: 340px; /* Set height to 300px */
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px; /* Optionally, add rounded corners */
+        margin: 30px;
+    }
+
+    .bottina-input {
+        width: 900px; /* Set width to 300px */
+        height: 240px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px; /* Optionally, add rounded corners */
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 30px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        word-wrap: break-word;
+    }
+}
